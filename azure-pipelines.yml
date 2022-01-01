@@ -32,11 +32,12 @@ stages:
       vmImage: $(vmImageName)
     steps:
     - task: DownloadSecureFile@1
+      name: 'envFile'
       displayName: 'Download secure file'
       inputs:
         secureFile: .env
     - bash: |
-        cp $(mySecureFile.secureFilePath)/.env bezkoder-app/
+        cp $(envFile.secureFilePath) bezkoder-app/
       displayName: "Copy env File"
     - task: Docker@2
       displayName: Build and push an image to container registry
