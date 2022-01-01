@@ -38,9 +38,10 @@ stages:
         secureFile: .env
     - bash: |
         cp $(envFile.secureFilePath) .
-        cp $(envFile.secureFilePath) bezkoder-app/
+        cp $(envFile.secureFilePath) app/
         ls -alF
-        ls -alF bezkoder-app/
+        ls -alF app/
+        cat app/.env
 
       displayName: "Copy env File"
     - task: Docker@2
