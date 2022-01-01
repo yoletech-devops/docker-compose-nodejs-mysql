@@ -35,6 +35,9 @@ stages:
       displayName: 'Download secure file'
       inputs:
         secureFile: .env
+    - bash: |
+        cp .env bezkoder-app/
+      displayName: "Copy env File"
     - task: Docker@2
       displayName: Build and push an image to container registry
       inputs:
