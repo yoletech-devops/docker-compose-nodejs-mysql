@@ -35,4 +35,5 @@ require("./app/routes/turorial.routes")(app);
 const PORT = process.env.NODE_DOCKER_PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
+  console.log("process.env.DB_HOST",process.env.DB_HOST)
 });
