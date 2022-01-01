@@ -24,8 +24,10 @@ module.exports = app => {
   // Delete all Tutorials
   router.delete("/", tutorials.deleteAll);
 
-  // Delete all Tutorials
-  router.get("/test", tutorials.test);
+  var router2 = require("express").Router();
+  // test
+  router2.get("/", tutorials.test);
 
   app.use('/api/tutorials', router);
+  app.use('/api/test', router2);
 };
