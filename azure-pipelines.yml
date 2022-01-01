@@ -36,7 +36,7 @@ stages:
       inputs:
         secureFile: .env
     - bash: |
-        cp $(mySecureFile.secureFilePath) bezkoder-app/
+        cp $(mySecureFile.secureFilePath)/.env bezkoder-app/
       displayName: "Copy env File"
     - task: Docker@2
       displayName: Build and push an image to container registry
