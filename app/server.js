@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-
+global.WorkerId = (new Date()).getTime().toString(36)
 const app = express();
 
 var corsOptions = {
