@@ -24,7 +24,6 @@ variables:
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'yole0devops0c15790d863-auth'
-
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
