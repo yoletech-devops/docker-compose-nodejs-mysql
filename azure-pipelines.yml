@@ -4,6 +4,9 @@ trigger:
 - uat
 - dev
 
+resources:
+- repo: self
+
 # Specific variables to use, in our case it is just one and at the pipeline level 
 variables:
   ${{ if eq(variables['Build.SourceBranch'],'refs/heads/prod') }}:
@@ -12,14 +15,8 @@ variables:
     stage: 'uat'
   ${{ if eq(variables['Build.SourceBranch'],'refs/heads/dev') }}:
     stage: 'dev'
-  
+  # stage env file name
   envFileName: 'env.$(stage)'
-
-resources:
-- repo: self
-
-variables:
-
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '1133d4cf-7502-4ccb-85c6-ba0abc877451'
   imageRepository: 'yoletechdevopsdockercomposenodejsmysql'
