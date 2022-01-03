@@ -147,5 +147,6 @@ exports.findAllPublished = (req, res) => {
 
 // find all published Tutorial
 exports.test = (req, res) => {
-  res.send({"env" : process.env.ENV_NAME , "workerId" : global.workerId });
+  //console.log("global.WorkerId",global.WorkerId,global)
+  res.send({"env" : process.env.ENV_NAME , "workerId" : global.WorkerId });
 };
