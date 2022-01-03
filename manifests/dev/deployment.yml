@@ -12,6 +12,7 @@ spec:
     metadata:
       labels:
         app: app1-dev 
+      namespace: dev
     spec:
       containers:
         - name: app1-dev 

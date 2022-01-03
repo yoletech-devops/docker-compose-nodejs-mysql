@@ -9,3 +9,4 @@ spec:
     - port: 8080 
     selector:
         app: app1-dev
+        namespace: dev
